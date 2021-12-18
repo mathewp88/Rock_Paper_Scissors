@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Rock Paper Scissors</string>
+    <string name="rock_paper_scissors">Rock Paper Scissors</string>
+    <string name="start">Start</string>
+    <string name="_0_0">0 : 0</string>
+    <string name="computer">Computer</string>
+    <string name="player">Player</string>
+    <string name="rock">Rock</string>
+    <string name="paper">Paper</string>
+    <string name="winlosetextview">WinLoseTextView</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
 </resources>
