@@ -14,6 +14,8 @@ public class StartScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+        //Gives time to read Game Score
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
         }
 
