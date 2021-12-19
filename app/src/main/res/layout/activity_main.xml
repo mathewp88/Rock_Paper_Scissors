@@ -7,17 +7,33 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView6"
         android:layout_width="120dp"
         android:layout_height="120dp"
+        android:onClick="RPS_Select"
         android:scaleType="fitCenter"
         android:tag="3"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:srcCompat="@drawable/Scissors"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:srcCompat="@drawable/scissor"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="TODO"
+        android:onClick="RPS_Select"
+        android:scaleType="fitCenter"
+        android:tag="2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:srcCompat="@drawable/paper"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/Heading"
@@ -31,22 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Start_Button"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@color/white"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="RPSselected"
-        android:text="@string/start"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Heading" />
-
     <TextView
         android:id="@+id/ScoreTextView"
         android:layout_width="wrap_content"
@@ -55,9 +55,8 @@
         android:text="@string/_0_0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Start_Button" />
+        app:layout_constraintTop_toBottomOf="@+id/Reset_Button" />
 
     <TextView
         android:id="@+id/textView4"
@@ -84,19 +83,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/rock"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/CompSelectedTextView"
         android:layout_width="0dp"
         android:layout_height="22dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/paper"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
@@ -104,39 +106,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:minHeight="48dp"
         android:text="@string/winlosetextview"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toStartOf="@+id/CompSelectedTextView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/UserSelectedTextView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ScoreTextView" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView4"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="64dp"
+        android:onClick="RPS_Select"
         android:scaleType="fitCenter"
         android:tag="1"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/WinLoseTextView"
-        app:srcCompat="@drawable/Rock"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/rock"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:scaleType="fitCenter"
-        android:tag="2"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+    <Button
+        android:id="@+id/Reset_Button"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="ResetButton"
+        android:text="Reset"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:srcCompat="@drawable/Paper"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Heading" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
