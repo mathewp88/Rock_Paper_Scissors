@@ -2,12 +2,16 @@ package com.example.rockpaperscissors;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     Random random;
 
-    int userScore = 0;
-    int compScore = 0;
+    public int userScore;
+    public int compScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +39,14 @@ public class MainActivity extends AppCompatActivity {
         WinLoseTextView.setText("");
 
         random = new Random();
+
+        userScore = 0;
+        compScore = 0;
+        ScoreTextView.setText("0 : 0");
+
     }
 
+    // Selects rock paper or scissors
     public void RPS_Select(View view) {
 
         int userSelection = Integer.parseInt(view.getTag().toString());
@@ -44,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         matchGame(userSelection);
     }
 
+    //Resets the game to 0:0 score
     public void ResetButton(View view) {
 
         WinLoseTextView.setText("");
@@ -76,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             WinLoseTextView.setText("Oops, You Lost");
         }
 
+        //Shows user selection
         switch (userSelection){
 
             case 1:
@@ -91,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        //shows computer selection
         switch (compSelection){
 
             case 1:
@@ -108,8 +121,18 @@ public class MainActivity extends AppCompatActivity {
 
         setScoreTextView(userScore, compScore);
 
-    }
+        if(userScore == 5 || compScore == 5){
+            //Pause for 750 milliseconds
+            try {
+                Thread.sleep(750);
+            } catch (InterruptedException e) {e.printStackTrace();}
+            //Go to Start Screen
+            Intent i = new Intent(this, StartScreen.class);
+            startActivity(i);
+            }
+        }
 
+        //sets the score after a game
     private void setScoreTextView(int UserScore, int CompScore){
         ScoreTextView.setText(String.valueOf(UserScore) + " : " + String.valueOf(CompScore));
     }
