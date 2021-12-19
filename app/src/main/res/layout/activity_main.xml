@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".MainActivity">
 
     <ImageView
@@ -17,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:srcCompat="@drawable/scissor"
+        app:srcCompat="@drawable/scissorhand"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -32,7 +33,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:srcCompat="@drawable/paper"
+        app:srcCompat="@drawable/paperhand"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -40,8 +41,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:fontFamily="@font/bungee_inline"
         android:text="@string/rock_paper_scissors"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,8 +56,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/bungee_inline"
         android:text="@string/_0_0"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Heading" />
@@ -64,7 +70,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="38dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/bungee_inline"
         android:text="@string/player"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/ScoreTextView"
         app:layout_constraintEnd_toStartOf="@+id/ScoreTextView" />
 
@@ -74,7 +83,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/bungee_inline"
         android:text="@string/computer"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/ScoreTextView"
         app:layout_constraintStart_toEndOf="@+id/ScoreTextView" />
 
@@ -83,8 +95,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/bungee_inline"
         android:text="@string/rock"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -94,8 +108,10 @@
         android:layout_width="0dp"
         android:layout_height="22dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/bungee_inline"
         android:text="@string/paper"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView5"
@@ -106,9 +122,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:fontFamily="@font/bungee_inline"
         android:minHeight="48dp"
         android:text="@string/winlosetextview"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +137,7 @@
         android:id="@+id/imageView4"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:onClick="RPS_Select"
         android:scaleType="fitCenter"
         android:tag="1"
@@ -126,7 +145,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/WinLoseTextView"
-        app:srcCompat="@drawable/rock"
+        app:srcCompat="@drawable/rockhand"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -134,14 +153,17 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:background="?android:attr/selectableItemBackground"
+        android:fontFamily="@font/bungee_inline"
         android:onClick="ResetButton"
         android:text="Reset"
-        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:rippleColor="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
