@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     TextView UserSelectedTextView, CompSelectedTextView, WinLoseTextView, ScoreTextView;
+
+    ImageView WinView, LoseView;
 
     Random random;
 
@@ -38,9 +41,15 @@ public class MainActivity extends AppCompatActivity {
         WinLoseTextView = findViewById(R.id.WinLoseTextView);
         ScoreTextView = findViewById(R.id.ScoreTextView);
 
+        WinView = findViewById(R.id.WinView);
+        LoseView = findViewById(R.id.LoseView);
+
         UserSelectedTextView.setText("");
         CompSelectedTextView.setText("");
         WinLoseTextView.setText("");
+
+        WinView.setVisibility(View.INVISIBLE);
+        LoseView.setVisibility(View.INVISIBLE);
 
         random = new Random();
 
@@ -126,6 +135,12 @@ public class MainActivity extends AppCompatActivity {
         setScoreTextView(userScore, compScore);
 
         if(userScore == 5 || compScore == 5){
+            if(userScore == 5){
+                WinView.setVisibility(View.VISIBLE);
+            }
+            else{
+                LoseView.setVisibility(View.VISIBLE);
+            }
             //Go to Start Screen
             Intent i = new Intent(this, StartScreen.class);
             startActivity(i);

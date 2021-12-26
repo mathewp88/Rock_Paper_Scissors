@@ -160,10 +160,37 @@
         android:text="Reset"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:rippleColor="#FFFFFF" />
+        app:rippleColor="#FFFFFF"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/WinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Heading"
+        app:srcCompat="@drawable/win"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/LoseView"
+        android:layout_width="386dp"
+        android:layout_height="507dp"
+        android:background="#000000"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/WinView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Heading"
+        app:srcCompat="@drawable/lose"
+        tools:visibility="invisible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
