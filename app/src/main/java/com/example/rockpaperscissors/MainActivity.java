@@ -89,15 +89,42 @@ public class MainActivity extends AppCompatActivity {
         if(userSelection == compSelection){
             //Tie
             WinLoseTextView.setText("Tie");
-        } else if((userSelection - compSelection) % 3 == 1){
-            //User Wins
-            userScore++;
-            WinLoseTextView.setText("Yay!, You Won.");
         }
-        else{
-            //Comp Wins
-            compScore++;
-            WinLoseTextView.setText("Oops, You Lost");
+        if((userSelection == 1)) {
+            if (compSelection == 3) {
+                //User Wins
+                userScore++;
+                WinLoseTextView.setText("Yay!, You Won.");
+            }
+            else {
+                //Comp Wins
+                compScore++;
+                WinLoseTextView.setText("Oops, You Lost");
+            }
+        }
+        if((userSelection == 2)) {
+            if (compSelection == 1) {
+                //User Wins
+                userScore++;
+                WinLoseTextView.setText("Yay!, You Won.");
+            }
+            else {
+                //Comp Wins
+                compScore++;
+                WinLoseTextView.setText("Oops, You Lost");
+            }
+        }
+        else if((userSelection == 3)) {
+            if (compSelection == 2) {
+                //User Wins
+                userScore++;
+                WinLoseTextView.setText("Yay!, You Won.");
+            }
+            else {
+                //Comp Wins
+                compScore++;
+                WinLoseTextView.setText("Oops, You Lost");
+            }
         }
 
         //Shows user selection
